@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 
-yargs
+const args = yargs
     .option('production', {
         boolean: true,
         default: false,
@@ -24,4 +24,6 @@ yargs
         default: 8080,
         describe: 'server port'
     })
-    .argv
+    .argv;
+
+export default args;
