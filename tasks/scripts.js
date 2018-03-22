@@ -10,7 +10,7 @@ import {log, colors} from 'gulp-util';
 import args from './util/args';
 
 gulp.task('scripts', () => gulp
-    .src(['app/js/index.js'])
+    .src(['app/javascripts/index.js'])
     .pipe(plumber({
         errorHandle () {}
     }))
@@ -27,7 +27,7 @@ gulp.task('scripts', () => gulp
             chunks: false
         }));
     })
-    .pipe(gulp.dest('server/public/js'))
+    .pipe(gulp.dest('server/public/javascripts'))
     .pipe(rename({
         basename: 'cp',
         extname: 'min.js'
@@ -40,6 +40,6 @@ gulp.task('scripts', () => gulp
             'quote_keys': true
         }
     }))
-    .pipe(gulp.dest('server/public/js'))
+    .pipe(gulp.dest('server/public/javascripts'))
     .pipe(gulpif(args.watch, livereload()))
 );
