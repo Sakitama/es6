@@ -6,10 +6,10 @@ gulp.task('server', cb => {
     if (!args.watch) return cb();
     let server = gls.new(['--harmony', 'server/bin/www']);
     server.start();
-    gulp.watch(['server/public/javascripts/*.js', 'server/public/stylesheets/*.css', 'server/views/*.ejs'], function (file) {
+    gulp.watch(['server/public/javascripts/*.js', 'server/public/stylesheets/*.css', 'server/views/*.ejs'], file => {
         server.notify.apply(server, [file]);
     });
-    gulp.watch(['server/routes/*.js', 'server/app.js'], function () {
+    gulp.watch(['server/routes/*.js', 'server/app.js'], () => {
         server.start.bind(server)();
     });
 });
