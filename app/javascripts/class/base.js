@@ -204,19 +204,19 @@ class Base {
         const c1 = (win1 < 0 && win2 < 0) ? Math.abs(win1) : win1;
         const c2 = (win1 < 0 && win2 < 0) ? Math.abs(win2) : win2;
         if (count === 0) {
-            tpl = `您选了 <b class="red">${count}</b> 注，共 <b class="red">${count * 2}</b> 元`
+            tpl = `您选了 <b class="red">${count}</b> 注，共 <b class="red">${count * 2}</b> 元`;
         } else if (range[0] === range[1]) {
             tpl = `您选了 <b>${count}</b> 注，共 <b>${count * 2}</b> 元  <em>若中奖，奖金：
 			<strong class="red">${range[0]}</strong> 元，
 			您将${win1 >= 0 ? '盈利' : '亏损'}
-			<strong class="${win1 >= 0 ? 'red' : 'green'}">${Math.abs(win1)} </strong> 元</em>`
+			<strong class="${win1 >= 0 ? 'red' : 'green'}">${Math.abs(win1)} </strong> 元</em>`;
         } else {
             tpl = `您选了 <b>${count}</b> 注，共 <b>${count * 2}</b> 元  <em>若中奖，奖金：
 			<strong class="red">${range[0]}</strong> 至 <strong class="red">${range[1]}</strong> 元，
 			您将${(win1 < 0 && win2 < 0) ? '亏损' : '盈利'}
 			<strong class="${win1 >= 0 ? 'red' : 'green'}">${c1} </strong>
 			至 <strong class="${win2 >= 0 ? 'red' : 'green'}"> ${c2} </strong>
-			元</em>`
+			元</em>`;
         }
         $('.sel_info').html(tpl);
     }
